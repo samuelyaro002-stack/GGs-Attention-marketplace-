@@ -1,0 +1,29 @@
+kind = "video"
+videoAspectRatio = "16:9"
+previewPath = "/ggs-project-film/"
+title = "GG’s Attention Marketplace — Project Film"
+description = "A 30-second animated landscape overview of creator campaigns, transparent XP, account security, and GoodDollar Daily G$, using GG’s coral, parchment, and ink branding."
+version = "1.0.0"
+id = "artifacts/ggs-project-film"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/ggs-project-film/" ]
+localPort = 22157
+
+[services.development]
+run = "pnpm --filter @workspace/ggs-project-film run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ggs-project-film", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ggs-project-film/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22157"
+BASE_PATH = "/ggs-project-film/"

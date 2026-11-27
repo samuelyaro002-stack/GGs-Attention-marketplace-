@@ -1,0 +1,1022 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: auth
+    description: Current-user authentication operations
+  - name: marketplace
+    description: Campaigns, submissions, and leaderboard operations
+paths:
+  /celo-reward-pool/config:
+    get:
+      operationId: getCeloRewardPoolConfig
+      tags: [marketplace]
+      responses:
+        "200":
+          description: Active Celo network and its verified deployment configuration
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CeloRewardPoolConfig"
+  /celo-reward-pool/admin/campaigns:
+    get:
+      operationId: getCeloAdminCampaigns
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      responses:
+        "200":
+          description: CELO campaigns and verified on-chain balances with XP allocations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CeloAdminCampaign"
+        "401": { description: Sign-in required }
+        "403": { description: Approved administrator required }
+  /campaigns/{campaignId}/celo-reward-pool/payout:
+    post:
+      operationId: recordCeloBatchPayout
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CeloRewardPoolTransactionInput"
+      responses:
+        "200":
+          description: Verified batch transaction and current on-chain payout status
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CeloAdminCampaign"
+        "400": { description: Transaction verification failed }
+        "401": { description: Sign-in required }
+        "403": { description: Approved administrator required }
+        "409": { description: Campaign changed or was already paid }
+  /campaigns/{campaignId}/celo-reward-pool/eligibility:
+    get:
+      operationId: getCeloRewardPoolEligibility
+      tags: [marketplace]
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Eligibility before approval or funding
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolEligibility"
+        "404": { description: Campaign not found }
+        "400": { description: Invalid request }
+  /campaigns/{campaignId}/celo-reward-pool/funding:
+    post:
+      operationId: recordCeloRewardPoolFunding
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CeloRewardPoolFundingInput"
+      responses:
+        "200":
+          description: Funding and net creator pool verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400": { description: Invalid transaction }
+        "401": { description: Authentication required }
+        "403": { description: Administrator required }
+        "404": { description: Campaign not found }
+        "409": { description: Campaign state conflict }
+        "503": { description: Approved deployment unavailable }
+  /campaigns/{campaignId}/celo-reward-pool/distribution:
+    get:
+      operationId: getCeloRewardPoolDistribution
+      tags: [marketplace]
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Net CELO XP allocation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CeloRewardPoolDistribution"
+        "400": { description: Invalid request }
+        "404": { description: Campaign not found }
+        "409": { description: Distribution unavailable }
+  /campaigns/{campaignId}/celo-reward-pool/root:
+    post:
+      operationId: recordCeloRewardPoolRoot
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolRootInput"
+      responses:
+        "200":
+          description: Root verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400": { description: Invalid transaction }
+        "401": { description: Authentication required }
+        "403": { description: Administrator required }
+        "404": { description: Campaign not found }
+        "409": { description: Campaign state conflict }
+        "503": { description: Approved deployment unavailable }
+  /campaigns/{campaignId}/celo-reward-pool/claim/{walletAddress}:
+    get:
+      operationId: getCeloRewardPoolClaim
+      tags: [marketplace]
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+        - $ref: "#/components/parameters/WalletAddress"
+      responses:
+        "200":
+          description: Unclaimed CELO allocation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolClaim"
+        "400": { description: Invalid request }
+        "404": { description: Campaign or allocation not found }
+        "409": { description: Closed or already claimed }
+        "503": { description: Approved deployment unavailable }
+  /campaigns/{campaignId}/celo-reward-pool/claim:
+    post:
+      operationId: recordCeloRewardPoolClaim
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolClaimInput"
+      responses:
+        "200":
+          description: CELO claim verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolClaim"
+        "400": { description: Invalid transaction }
+        "401": { description: Authentication required }
+        "403": { description: Origin rejected }
+        "404": { description: Campaign not found }
+        "409": { description: Campaign state conflict }
+        "503": { description: Approved deployment unavailable }
+  /campaigns/{campaignId}/celo-reward-pool/refund:
+    post:
+      operationId: recordCeloRewardPoolRefund
+      tags: [marketplace]
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CeloRewardPoolTransactionInput"
+      responses:
+        "200":
+          description: Expired unclaimed CELO withdrawal verified
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400": { description: Invalid transaction }
+        "401": { description: Authentication required }
+        "403": { description: Administrator required }
+        "404": { description: Campaign not found }
+        "409": { description: Campaign state conflict }
+        "503": { description: Approved deployment unavailable }
+  /auth/me:
+    get:
+      operationId: getCurrentUser
+      tags: [auth]
+      summary: Get the verified Privy user ID and admin status
+      security:
+        - PrivyBearerToken: []
+      responses:
+        "200":
+          description: Authenticated user profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrentUser"
+        "401":
+          description: Authentication required
+        "503":
+          description: Profile temporarily unavailable
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /marketplace/summary:
+    get:
+      operationId: getMarketplaceSummary
+      tags: [marketplace]
+      summary: Get marketplace summary
+      responses:
+        "200":
+          description: Summary metrics and recent activity
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MarketplaceSummary"
+  /reward-pool/config:
+    get:
+      operationId: getRewardPoolConfig
+      tags: [marketplace]
+      summary: Get the configured G$ reward pool chain settings
+      responses:
+        "200":
+          description: Reward pool configuration
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolConfig"
+  /campaign-quote:
+    get:
+      operationId: getCampaignQuote
+      tags: [marketplace]
+      summary: Get a short-lived CELO quote for a USD reward pool
+      parameters:
+        - in: query
+          name: usdAmount
+          required: true
+          schema: { type: string, minLength: 1, maxLength: 9 }
+      responses:
+        "200":
+          description: Signed, short-lived CELO quote
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CampaignQuote"
+        "400":
+          description: Invalid USD amount
+        "503":
+          description: CELO price is unavailable
+  /campaigns:
+    get:
+      operationId: listCampaigns
+      tags: [marketplace]
+      summary: List active campaigns
+      responses:
+        "200":
+          description: Campaign list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Campaign"
+    post:
+      operationId: createCampaign
+      tags: [marketplace]
+      summary: Launch a campaign
+      security:
+        - PrivyBearerToken: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CampaignInput"
+      responses:
+        "201":
+          description: Campaign created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400":
+          description: Invalid campaign input
+        "401":
+          description: Authentication required
+        "403":
+          description: Cross-origin or invalid request
+        "429":
+          description: Rate limit exceeded
+  /campaigns/{campaignId}/funding-quote:
+    post:
+      operationId: refreshCampaignFundingQuote
+      tags: [marketplace]
+      summary: Refresh an expired CELO quote for a draft campaign
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Current funding amount and quote
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CampaignQuote"
+        "401":
+          description: Authentication required
+        "403":
+          description: Administrator access required
+        "404":
+          description: Campaign not found
+        "409":
+          description: Campaign is no longer a draft
+        "503":
+          description: CELO price is unavailable
+  /campaigns/{campaignId}:
+    get:
+      operationId: getCampaign
+      tags: [marketplace]
+      summary: Get a campaign with submissions
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Campaign detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CampaignDetail"
+        "404":
+          description: Campaign not found
+  /campaigns/{campaignId}/submissions:
+    post:
+      operationId: createSubmission
+      tags: [marketplace]
+      summary: Submit creator engagement for scoring
+      description: Links must use HTTP(S) and belong to the selected platform.
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubmissionInput"
+      responses:
+        "201":
+          description: Submission scored
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Submission"
+        "400":
+          description: Invalid submission input
+        "404":
+          description: Campaign not found
+        "401":
+          description: Authentication required
+        "403":
+          description: Cross-origin or invalid request
+        "429":
+          description: Submission rate limit exceeded
+        "409":
+          description: Duplicate post or submissions are closed
+  /campaigns/{campaignId}/leaderboard:
+    get:
+      operationId: getCampaignLeaderboard
+      tags: [marketplace]
+      summary: Get ranked creator rewards for a campaign
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Leaderboard rows
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LeaderboardRow"
+        "404":
+          description: Campaign not found
+  /campaigns/{campaignId}/reward-pool/funding:
+    post:
+      operationId: recordRewardPoolFunding
+      tags: [marketplace]
+      summary: Record the onchain campaign funding transaction
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolFundingInput"
+      responses:
+        "200":
+          description: Campaign reward pool updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400":
+          description: Invalid funding data
+        "404":
+          description: Campaign not found
+        "401":
+          description: Authentication required
+        "403":
+          description: Administrator access required or origin rejected
+        "429":
+          description: Rate limit exceeded
+        "503":
+          description: Onchain verification is not configured
+        "409":
+          description: Campaign is not in the funding lifecycle state
+  /campaigns/{campaignId}/reward-pool/eligibility:
+    get:
+      operationId: getRewardPoolEligibility
+      tags: [marketplace]
+      summary: Check reward funding eligibility before requesting a wallet signature
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Public funding eligibility status without submission details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolEligibility"
+        "400":
+          description: Invalid campaign id
+        "404":
+          description: Campaign not found
+  /campaigns/{campaignId}/reward-pool/swap:
+    post:
+      operationId: recordRewardPoolSwap
+      tags: [marketplace]
+      summary: Record the G$ output from the swap transaction
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolSwapInput"
+      responses:
+        "200":
+          description: Campaign reward pool updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400":
+          description: Invalid swap data
+        "404":
+          description: Campaign not found
+        "401":
+          description: Authentication required
+        "403":
+          description: Administrator access required or origin rejected
+        "429":
+          description: Rate limit exceeded
+        "503":
+          description: Onchain verification is not configured
+        "409":
+          description: Campaign is not in the swap lifecycle state
+  /campaigns/{campaignId}/reward-pool/distribution:
+    get:
+      operationId: getRewardPoolDistribution
+      tags: [marketplace]
+      summary: Build the Merkle distribution from final XP shares
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      responses:
+        "200":
+          description: Merkle root and claimable leaves
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolDistribution"
+        "400":
+          description: Distribution cannot be built yet
+        "404":
+          description: Campaign not found
+  /campaigns/{campaignId}/reward-pool/root:
+    post:
+      operationId: recordRewardPoolRoot
+      tags: [marketplace]
+      summary: Record the published Merkle root transaction
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolRootInput"
+      responses:
+        "200":
+          description: Campaign reward pool updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400":
+          description: Invalid root data
+        "404":
+          description: Campaign not found
+        "401":
+          description: Authentication required
+        "403":
+          description: Administrator access required or origin rejected
+        "429":
+          description: Rate limit exceeded
+        "503":
+          description: Onchain verification is not configured
+        "409":
+          description: Campaign is not in the root publishing lifecycle state
+  /campaigns/{campaignId}/reward-pool/claim/{walletAddress}:
+    get:
+      operationId: getRewardPoolClaim
+      tags: [marketplace]
+      summary: Get a creator's G$ claim amount and Merkle proof
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+        - $ref: "#/components/parameters/WalletAddress"
+      responses:
+        "200":
+          description: Claim data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolClaim"
+        "400":
+          description: Claim is not available
+        "409":
+          description: This wallet already claimed its allocation
+        "404":
+          description: Campaign or wallet not found
+        "503":
+          description: Onchain claim verification is not configured
+  /campaigns/{campaignId}/reward-pool/claim:
+    post:
+      operationId: recordRewardPoolClaim
+      tags: [marketplace]
+      summary: Record a creator claim transaction
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolClaimInput"
+      responses:
+        "200":
+          description: Claim recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RewardPoolClaim"
+        "400":
+          description: Invalid claim data
+        "404":
+          description: Campaign not found
+        "401":
+          description: Authentication required
+        "403":
+          description: Cross-origin or invalid request
+        "429":
+          description: Rate limit exceeded
+        "503":
+          description: Onchain verification is not configured
+  /campaigns/{campaignId}/reward-pool/refund:
+    post:
+      operationId: recordRewardPoolRefund
+      tags: [marketplace]
+      summary: Record the project refund of expired unclaimed G$
+      security:
+        - PrivyBearerToken: []
+      parameters:
+        - $ref: "#/components/parameters/CampaignId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RewardPoolRefundInput"
+      responses:
+        "200":
+          description: Campaign closed after the onchain refund
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Campaign"
+        "400":
+          description: Invalid refund transaction
+        "401":
+          description: Authentication required
+        "403":
+          description: Administrator access required or origin rejected
+        "404":
+          description: Campaign not found
+        "409":
+          description: Campaign is not eligible for an expired refund
+        "429":
+          description: Rate limit exceeded
+        "503":
+          description: Onchain verification is not configured
+components:
+  securitySchemes:
+    PrivyBearerToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    CampaignId:
+      name: campaignId
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 9007199254740991
+    WalletAddress:
+      name: walletAddress
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: "^0x[a-fA-F0-9]{40}$"
+  schemas:
+    CeloRewardPoolConfig:
+      type: object
+      required: [network, chainId, chainName, rpcUrl, explorerUrl, tokenAddress, contractAddress, protocolWallet, ownerWallet, runtimeCodeHash, sourceVerificationUrl, ready, wethEnabled, protocolFeeBps, reason]
+      properties:
+        network: { type: string, enum: [sepolia, mainnet] }
+        chainId: { type: integer, enum: [11142220, 42220] }
+        chainName: { type: string }
+        rpcUrl: { type: string, format: uri }
+        explorerUrl: { type: string, format: uri }
+        tokenAddress: { type: string }
+        contractAddress: { type: ["string", "null"] }
+        protocolWallet: { type: ["string", "null"] }
+        ownerWallet: { type: ["string", "null"] }
+        runtimeCodeHash: { type: ["string", "null"], pattern: "^0x[a-fA-F0-9]{64}$" }
+        sourceVerificationUrl: { type: string, format: uri }
+        ready: { type: boolean }
+        wethEnabled: { type: boolean, enum: [false] }
+        protocolFeeBps: { type: integer, enum: [1000] }
+        reason: { type: ["string", "null"] }
+    CeloRewardPoolTransactionInput:
+      type: object
+      required: [txHash]
+      properties:
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    CeloRewardPoolFundingInput:
+      allOf:
+        - $ref: "#/components/schemas/CeloRewardPoolTransactionInput"
+        - type: object
+          required: [onchainCampaignId]
+          properties:
+            onchainCampaignId: { type: integer, minimum: 0, maximum: 2147483647 }
+    CeloRewardPoolDistribution:
+      type: object
+      required: [campaignId, onchainCampaignId, celoPoolRaw, totalAllocatedRaw, merkleRoot, leaves]
+      properties:
+        campaignId: { type: integer }
+        onchainCampaignId: { type: integer }
+        celoPoolRaw: { type: string }
+        totalAllocatedRaw: { type: string }
+        merkleRoot: { type: string }
+        leaves:
+          type: array
+          items:
+            $ref: "#/components/schemas/RewardPoolDistributionLeaf"
+    CurrentUser:
+      type: object
+      required: [id, displayName, isAdmin]
+      properties:
+        id: { type: string, minLength: 1 }
+        displayName: { type: string }
+        isAdmin: { type: boolean }
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    Campaign:
+      type: object
+      required: [id, name, brief, pool, cycle, submissionsCount, xpAwarded, createdAt, rewardAsset, chainId, ethFundedRaw, gdPoolRaw, amountDepositedRaw, celoPoolRaw, protocolFeeRaw, celoDistributedRaw, celoRemainingRaw, requireIdentity, rewardStatus]
+      properties:
+        id: { type: integer, minimum: 1, maximum: 9007199254740991 }
+        name: { type: string }
+        brief: { type: string }
+        pool: { type: number, format: double }
+        celoTargetAmount: { type: ["string", "null"], description: "CELO target intent in whole-token decimal units, never a verified deposit. Null for G$ and legacy CELO records." }
+        usdTargetAmount: { type: ["string", "null"], description: "USD amount selected by the campaign funder. Null for legacy and direct-CELO campaigns." }
+        celoUsdRate: { type: ["string", "null"], description: "USD per CELO quote used to calculate the CELO target." }
+        cycle: { type: string }
+        submissionsCount: { type: integer }
+        xpAwarded: { type: integer }
+        createdAt: { type: string, format: date-time }
+        rewardAsset: { type: string, enum: [G$, CELO] }
+        amountDepositedRaw: { type: string }
+        celoPoolRaw: { type: string }
+        protocolFeeRaw: { type: string }
+        celoDistributedRaw: { type: string }
+        celoRemainingRaw: { type: string }
+        chainId: { type: integer }
+        contractAddress: { type: ["string", "null"], pattern: "^0x[a-fA-F0-9]{40}$" }
+        projectWallet: { type: ["string", "null"], pattern: "^0x[a-fA-F0-9]{40}$" }
+        onchainCampaignId: { type: ["integer", "null"], minimum: 0, maximum: 2147483647 }
+        ethFundedRaw: { type: string }
+        gdPoolRaw: { type: string }
+        requireIdentity: { type: boolean, description: G$ claims require identity; CELO Sepolia smoke tests disable this gate. }
+        merkleRoot: { type: ["string", "null"] }
+        rewardStatus:
+          type: string
+          enum: [draft, funded, distributing, paid, swapped, root-published, claiming, closed]
+        claimDeadline: { type: ["string", "null"], format: date-time }
+    CampaignDetail:
+      allOf:
+        - $ref: "#/components/schemas/Campaign"
+        - type: object
+          required: [submissions]
+          properties:
+            submissions:
+              type: array
+              items:
+                $ref: "#/components/schemas/Submission"
+    CampaignInput:
+      type: object
+      required: [name, pool, cycle]
+      properties:
+        rewardAsset: { type: string, enum: [CELO], default: CELO }
+        name: { type: string, minLength: 2, maxLength: 80 }
+        brief: { type: string, maxLength: 400 }
+        pool: { type: number, format: double, minimum: 0, maximum: 10000000, description: "Legacy summary field. The server derives its value from the signed USD amount, or stores 0 for direct CELO amounts." }
+        usdTargetAmount: { type: string, maxLength: 9, description: "Optional USD amount with up to two decimals. Required with quoteToken unless direct CELO is used." }
+        quoteToken: { type: string, maxLength: 512, description: "Signed quote token returned by GET /campaign-quote." }
+        celoTargetAmount: { type: string, pattern: "^(0|[1-9][0-9]{0,17})(\\.[0-9]{1,4})?$", description: "Direct CELO amount for test-mode fallback, rounded to at most four decimal places." }
+        cycle:
+          type: string
+          enum: [1 week, 2 weeks, 4 weeks]
+    CampaignQuote:
+      type: object
+      required: [usdAmount, celoAmount, rateUsd, source, rateUpdatedAt, expiresAt, quoteToken]
+      properties:
+        usdAmount: { type: string }
+        celoAmount: { type: string }
+        rateUsd: { type: string }
+        source: { type: string, enum: [Coinbase, CoinGecko] }
+        rateUpdatedAt: { type: integer, format: int64 }
+        expiresAt: { type: integer, format: int64 }
+        quoteToken: { type: string }
+    Submission:
+      type: object
+      required: [id, campaignId, handle, platform, link, likes, reposts, replies, trust, xp, createdAt]
+      properties:
+        id: { type: integer, minimum: 1, maximum: 9007199254740991 }
+        campaignId: { type: integer, minimum: 1, maximum: 9007199254740991 }
+        handle: { type: string, maxLength: 40 }
+        platform: { type: string }
+        link:
+          type: string
+          format: uri
+          maxLength: 300
+          description: HTTP(S) URL on an official domain for the selected platform.
+        likes: { type: integer }
+        reposts: { type: integer }
+        replies: { type: integer }
+        trust: { type: number, format: double }
+        xp: { type: integer }
+        createdAt: { type: string, format: date-time }
+        walletAddress: { type: ["string", "null"], pattern: "^0x[a-fA-F0-9]{40}$" }
+    SubmissionInput:
+      type: object
+      required: [handle, platform, link, accountAge, walletAddress]
+      properties:
+        handle: { type: string, minLength: 1, maxLength: 40 }
+        platform:
+          type: string
+          enum: [X (Twitter), TikTok, Medium]
+        link:
+          type: string
+          format: uri
+          maxLength: 300
+          description: HTTP(S) URL on an official domain for the selected platform.
+        accountAge:
+          type: string
+          enum: [under-30-days, 1-6-months, established]
+        walletAddress:
+          type: string
+          pattern: "^0x[a-fA-F0-9]{40}$"
+          description: Required non-zero EVM wallet address for reward eligibility.
+    LeaderboardRow:
+      type: object
+      required: [rank, handle, platform, posts, xp, share, estimatedReward, trust]
+      properties:
+        rank: { type: integer }
+        handle: { type: string }
+        platform: { type: string }
+        posts: { type: integer }
+        xp: { type: integer }
+        share: { type: number, format: double }
+        estimatedReward: { type: number, format: double }
+        trust: { type: number, format: double }
+    RecentActivity:
+      type: object
+      required: [kind, label, detail, createdAt]
+      properties:
+        kind: { type: string }
+        label: { type: string }
+        detail: { type: string }
+        createdAt: { type: string, format: date-time }
+    MarketplaceSummary:
+      type: object
+      required: [activeCampaigns, creatorsSubmitted, totalXp, totalPool, recentActivity]
+      properties:
+        activeCampaigns: { type: integer }
+        creatorsSubmitted: { type: integer }
+        totalXp: { type: integer }
+        totalPool: { type: number, format: double }
+        recentActivity:
+          type: array
+          items:
+            $ref: "#/components/schemas/RecentActivity"
+    RewardPoolConfig:
+      type: object
+      required: [chainId, chainName, tokenAddress, contractAddress, ready]
+      properties:
+        chainId: { type: integer }
+        chainName: { type: string }
+        tokenAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        contractAddress: { type: ["string", "null"], pattern: "^0x[a-fA-F0-9]{40}$" }
+        ready: { type: boolean }
+    RewardPoolEligibility:
+      type: object
+      required: [eligible, reason]
+      properties:
+        eligible: { type: boolean }
+        reason: { type: ["string", "null"] }
+    RewardPoolFundingInput:
+      type: object
+      required: [onchainCampaignId, contractAddress, projectWallet, ethFundedRaw, txHash]
+      properties:
+        onchainCampaignId: { type: integer, minimum: 0, maximum: 2147483647 }
+        contractAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        projectWallet: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        ethFundedRaw: { type: string, minLength: 1, maxLength: 78, pattern: "^(0|[1-9][0-9]*)$" }
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    RewardPoolSwapInput:
+      type: object
+      required: [gdPoolRaw, txHash]
+      properties:
+        gdPoolRaw: { type: string, minLength: 1, maxLength: 78, pattern: "^(0|[1-9][0-9]*)$" }
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    RewardPoolRootInput:
+      type: object
+      required: [merkleRoot, txHash]
+      properties:
+        merkleRoot: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    RewardPoolRefundInput:
+      type: object
+      required: [contractAddress, txHash]
+      properties:
+        contractAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    RewardPoolDistributionLeaf:
+      type: object
+      required: [walletAddress, handle, amountRaw, proof, eligible]
+      properties:
+        walletAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        handle: { type: string }
+        amountRaw: { type: string }
+        proof:
+          type: array
+          items: { type: string }
+        eligible: { type: boolean }
+    RewardPoolDistribution:
+      type: object
+      required: [campaignId, onchainCampaignId, gdPoolRaw, totalAllocatedRaw, merkleRoot, leaves]
+      properties:
+        campaignId: { type: integer }
+        onchainCampaignId: { type: integer }
+        gdPoolRaw: { type: string }
+        totalAllocatedRaw: { type: string }
+        merkleRoot: { type: string }
+        leaves:
+          type: array
+          items:
+            $ref: "#/components/schemas/RewardPoolDistributionLeaf"
+    RewardPoolClaimInput:
+      type: object
+      required: [walletAddress, amountRaw, txHash]
+      properties:
+        walletAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        amountRaw: { type: string, minLength: 1, maxLength: 78, pattern: "^(0|[1-9][0-9]*)$" }
+        txHash: { type: string, pattern: "^0x[a-fA-F0-9]{64}$" }
+    RewardPoolClaim:
+      type: object
+      required: [campaignId, onchainCampaignId, walletAddress, amountRaw, proof, merkleRoot]
+      properties:
+        campaignId: { type: integer }
+        onchainCampaignId: { type: integer }
+        walletAddress: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        amountRaw: { type: string }
+        proof:
+          type: array
+          items: { type: string }
+        merkleRoot: { type: string }
+    CeloAdminSubmission:
+      type: object
+      required: [id, handle, walletAddress, xp, payoutRaw, paid]
+      properties:
+        id: { type: integer }
+        handle: { type: string }
+        walletAddress: { type: string }
+        xp: { type: integer }
+        payoutRaw: { type: string }
+        paid: { type: boolean }
+    CeloAdminCampaign:
+      type: object
+      required: [id, name, rewardStatus, target, contractAddress, onchainCampaignId, grossRaw, feeRaw, poolRaw, distributedRaw, remainingRaw, payoutDeadline, totalXp, submissions, recipients, amounts, eligible, reason]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        rewardStatus: { type: string }
+        target: { type: ["string", "null"] }
+        contractAddress: { type: ["string", "null"] }
+        onchainCampaignId: { type: ["integer", "null"] }
+        grossRaw: { type: string }
+        feeRaw: { type: string }
+        poolRaw: { type: string }
+        distributedRaw: { type: string }
+        remainingRaw: { type: string }
+        payoutDeadline: { type: ["string", "null"], format: date-time }
+        totalXp: { type: integer }
+        submissions:
+          type: array
+          items:
+            $ref: "#/components/schemas/CeloAdminSubmission"
+        recipients:
+          type: array
+          items: { type: string, pattern: "^0x[a-fA-F0-9]{40}$" }
+        amounts:
+          type: array
+          items: { type: string, pattern: "^[0-9]+$" }
+        eligible: { type: boolean }
+        reason: { type: ["string", "null"] }
+

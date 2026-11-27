@@ -1,0 +1,1307 @@
+{
+  "format": "replit.sdm",
+  "version": 1,
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "background": {
+    "kind": "solid",
+    "color": {
+      "kind": "token",
+      "token": "background"
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": "#1D222F",
+      "surface": "#272C3A",
+      "surfaceAlt": "#323848",
+      "foreground": "#F8F4ED",
+      "muted": "#C2BAAD",
+      "accent": "#FF7C4D"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Manrope"
+    }
+  },
+  "elements": [
+    {
+      "id": "s07_topAccent",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 96,
+        "width": 56,
+        "height": 7
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "rect"
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      }
+    },
+    {
+      "id": "s07_kicker",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 110,
+        "width": 1100,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "WHY GG IS DIFFERENT"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_title",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 163,
+        "width": 1600,
+        "height": 145
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "A funded pool makes payout rules easier to inspect."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 27,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_tableHead",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 324,
+        "width": 1680,
+        "height": 72
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 8
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s07_th0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 337,
+        "width": 285,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DIMENSION"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 13.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_th1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 337,
+        "width": 425,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "TRADITIONAL DEALS"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 13.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.6
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_th2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 337,
+        "width": 425,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "QUEST PLATFORMS"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 13.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.6
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_th3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 337,
+        "width": 430,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "GG'S TODAY"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 13.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 0.6
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_row0",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 396,
+        "width": 1680,
+        "height": 88
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 5
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s07_r0c0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 406,
+        "width": 275,
+        "height": 66
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Payout"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r0c1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 404,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Contract"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r0c2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 404,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Platform rules"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r0c3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 404,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Funded; admin pays"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r1c0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 500,
+        "width": 275,
+        "height": 66
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Reward"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r1c1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 498,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Agreed fee"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r1c2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 498,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Task-based"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r1c3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 498,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "XP / pool"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_row2",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 584,
+        "width": 1680,
+        "height": 88
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 5
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s07_r2c0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 594,
+        "width": 275,
+        "height": 66
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Record"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r2c1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 592,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Deal trail"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r2c2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 592,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Quest log"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r2c3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 592,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Campaign history"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r3c0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 688,
+        "width": 275,
+        "height": 66
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Dispute"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r3c1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 686,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Negotiation"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r3c2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 686,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Platform policy"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r3c3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 686,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Admin review"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_row4",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 772,
+        "width": 1680,
+        "height": 88
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 5
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s07_r4c0",
+      "type": "text",
+      "frame": {
+        "x": 145,
+        "y": 782,
+        "width": 275,
+        "height": 66
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Measurement"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r4c1",
+      "type": "text",
+      "frame": {
+        "x": 445,
+        "y": 780,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Reach"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r4c2",
+      "type": "text",
+      "frame": {
+        "x": 890,
+        "y": 780,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Completion"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_r4c3",
+      "type": "text",
+      "frame": {
+        "x": 1335,
+        "y": 780,
+        "width": 420,
+        "height": 72
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Demo signals"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 19,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_qualifier",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 872,
+        "width": 1650,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Patterns vary. GG scoring is demo; social APIs are not connected."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 500,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_pdf",
+      "type": "shape",
+      "frame": {
+        "x": 1410,
+        "y": 80,
+        "width": 390,
+        "height": 64
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DOWNLOAD AS PDF",
+                "action": {
+                  "kind": "openUrl",
+                  "url": "/deck/ggs-investor-pitch.pdf",
+                  "target": "newWindow",
+                  "tooltip": "Open the complete deck as a PDF"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "background"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_prev",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "BACK",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "previous",
+                  "tooltip": "Previous slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_next",
+      "type": "shape",
+      "frame": {
+        "x": 310,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "NEXT",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "next",
+                  "tooltip": "Next slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s07_page",
+      "type": "text",
+      "frame": {
+        "x": 1640,
+        "y": 972,
+        "width": 160,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "07  /  12"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24,
+            "align": "right"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    }
+  ]
+}

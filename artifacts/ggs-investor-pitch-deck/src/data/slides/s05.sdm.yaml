@@ -1,0 +1,653 @@
+{
+  "format": "replit.sdm",
+  "version": 1,
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "background": {
+    "kind": "solid",
+    "color": {
+      "kind": "token",
+      "token": "background"
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": "#1D222F",
+      "surface": "#272C3A",
+      "surfaceAlt": "#323848",
+      "foreground": "#F8F4ED",
+      "muted": "#C2BAAD",
+      "accent": "#FF7C4D"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Manrope"
+    }
+  },
+  "assets": {
+    "landingShot": {
+      "src": "images/live-landing-crop.jpg",
+      "mimeType": "image/jpeg"
+    },
+    "campaignBoard": {
+      "src": "images/campaign-board-crop.jpg",
+      "mimeType": "image/jpeg"
+    }
+  },
+  "elements": [
+    {
+      "id": "s05_topAccent",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 96,
+        "width": 56,
+        "height": 7
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "rect"
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      }
+    },
+    {
+      "id": "s05_kicker",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 110,
+        "width": 1100,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "PRODUCT"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_title",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 163,
+        "width": 1600,
+        "height": 155
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "The public app is live; the creator view is gated."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 30,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_homeFrame",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 340,
+        "width": 755,
+        "height": 390
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 12
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s05_home",
+      "type": "image",
+      "frame": {
+        "x": 132,
+        "y": 352,
+        "width": 731,
+        "height": 366
+      },
+      "assetId": "landingShot",
+      "fit": "cover"
+    },
+    {
+      "id": "s05_homeCaption",
+      "type": "text",
+      "frame": {
+        "x": 132,
+        "y": 729,
+        "width": 730,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "PUBLIC LANDING  /  LIVE APP"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              },
+              "letterSpacingPt": 1.1
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_campaignFrame",
+      "type": "shape",
+      "frame": {
+        "x": 930,
+        "y": 340,
+        "width": 450,
+        "height": 510
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 12
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s05_campaign",
+      "type": "image",
+      "frame": {
+        "x": 942,
+        "y": 352,
+        "width": 426,
+        "height": 486
+      },
+      "assetId": "campaignBoard",
+      "fit": "cover"
+    },
+    {
+      "id": "s05_campaignCaption",
+      "type": "text",
+      "frame": {
+        "x": 943,
+        "y": 847,
+        "width": 426,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "SAMPLE CAMPAIGN UI"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 13.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              },
+              "letterSpacingPt": 0.6
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_creatorPanel",
+      "type": "shape",
+      "frame": {
+        "x": 1420,
+        "y": 340,
+        "width": 380,
+        "height": 510
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s05_creatorLabel",
+      "type": "text",
+      "frame": {
+        "x": 1450,
+        "y": 374,
+        "width": 320,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "CREATOR VIEW"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_creatorTitle",
+      "type": "text",
+      "frame": {
+        "x": 1450,
+        "y": 438,
+        "width": 320,
+        "height": 90
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "[PENDING]"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 20,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_creatorBody",
+      "type": "text",
+      "frame": {
+        "x": 1450,
+        "y": 548,
+        "width": 320,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Login required."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_sampleNote",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 897,
+        "width": 1600,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Sample campaign records are UI, not traction."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_pdf",
+      "type": "shape",
+      "frame": {
+        "x": 1410,
+        "y": 80,
+        "width": 390,
+        "height": 64
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DOWNLOAD AS PDF",
+                "action": {
+                  "kind": "openUrl",
+                  "url": "/deck/ggs-investor-pitch.pdf",
+                  "target": "newWindow",
+                  "tooltip": "Open the complete deck as a PDF"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "background"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_prev",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "BACK",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "previous",
+                  "tooltip": "Previous slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_next",
+      "type": "shape",
+      "frame": {
+        "x": 310,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "NEXT",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "next",
+                  "tooltip": "Next slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s05_page",
+      "type": "text",
+      "frame": {
+        "x": 1640,
+        "y": 972,
+        "width": 160,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "05  /  12"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24,
+            "align": "right"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    }
+  ]
+}

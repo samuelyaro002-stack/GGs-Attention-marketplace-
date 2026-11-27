@@ -1,0 +1,136 @@
+/* Shared interaction tokens. Only transform and opacity move between frames. */
+:root {
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-slow: 500ms;
+  --motion-enter: cubic-bezier(.2,.8,.2,1);
+  --motion-move: cubic-bezier(.45,0,.55,1);
+  --success: 145 55% 30%;
+  --warning: 34 90% 34%;
+  --error: var(--destructive);
+  --brand-link: 16 75% 38%;
+  --primary: 16 76% 38%;
+  --primary-foreground: 40 45% 98%;
+  --destructive: 3 75% 42%;
+  --overlay: 225 23% 15%;
+}
+.dark { --success: 145 50% 65%; --warning: 40 90% 68%; --brand-link: 16 100% 72%; --primary: 16 100% 65%; --primary-foreground: 225 23% 15%; --destructive: 3 75% 65%; }
+.bg-foreground { --primary: 16 100% 65%; --primary-foreground: 225 23% 15%; --success: 145 50% 65%; }
+.dark .bg-foreground { --primary: 16 76% 38%; --primary-foreground: 40 45% 98%; --success: 145 55% 30%; }
+.text-secondary { color: hsl(var(--success)); }
+:lang(zh-CN) { font-family: system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif; }
+.site-shell .hero h1 em, .site-shell .about-hero h1 em, .site-shell .fee-card strong { color: hsl(var(--primary)); }
+.site-shell .eyebrow { color: hsl(var(--brand-link)); }
+.site-shell .button-primary { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+.site-shell .audience-section { --primary: 16 100% 65%; --primary-foreground: 225 23% 15%; --brand-link: 16 100% 72%; }
+
+.preference-control {
+  position: relative; display: inline-flex; align-items: center; gap: 6px;
+  min-block-size: 36px; padding-inline: 9px; border: 1px solid hsl(var(--border));
+  border-radius: 4px; background: hsl(var(--card)); color: hsl(var(--foreground));
+  font: 500 11px var(--app-font-mono); white-space: nowrap;
+}
+.preference-control .theme-control { border: 0; padding: 0; min-block-size: 32px; max-inline-size: 90px; }
+.locale-select-overlay { position: absolute; inset: 0; inline-size: 100%; opacity: 0; cursor: pointer; }
+.locale-select-overlay option { background: hsl(var(--card)); color: hsl(var(--foreground)); }
+.preference-control:focus-within { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }
+.preference-control, .preference-control .theme-control { transition: background-color 200ms, color 200ms, border-color 200ms; }
+button, a, select { touch-action: manipulation; }
+button, a.button, [role='button'] {
+  transition: transform var(--motion-fast) var(--motion-move), opacity var(--motion-fast) var(--motion-move);
+}
+button:not(:disabled):active, a.button:active, [role='button']:active { transform: scale(.98); }
+button:focus-visible, a:focus-visible, select:focus-visible {
+  outline: 2px solid hsl(var(--ring)); outline-offset: 4px;
+}
+.motion-card { position: relative; isolation: isolate; }
+.motion-card:active { transform: scale(.98); }
+.motion-card::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; z-index: -1;
+  box-shadow: 0 10px 24px hsl(var(--foreground) / .12); opacity: 0;
+  transition: opacity var(--motion-base) var(--motion-move); pointer-events: none;
+}
+.site-shell :is(.audience-card, .journey-card, .type-card, .flow-card, .who-card, .fee-card) {
+  transition: transform var(--motion-base) var(--motion-move), opacity var(--motion-slow) var(--motion-enter);
+}
+@media (hover: hover) {
+  .motion-card:hover { transform: translateY(-4px); }
+  .motion-card:hover::before { opacity: 1; }
+  .site-shell :is(.audience-card, .journey-card, .type-card, .flow-card, .who-card, .fee-card).is-visible:hover { transform: translateY(-4px); }
+  button:not(:disabled):hover, a.button:hover { opacity: .9; }
+}
+.animate-pulse { position: relative; overflow: hidden; animation: none; }
+.animate-pulse::after {
+  content: ''; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, hsl(var(--foreground) / .08), transparent);
+  animation: skeleton-shimmer 1.6s var(--motion-move) infinite;
+}
+@keyframes skeleton-shimmer { to { transform: translateX(100%); } }
+[aria-invalid='true'] { animation: field-shake var(--motion-base) var(--motion-move); }
+@keyframes field-shake { 20%,60% { transform: translateX(-3px); } 40%,80% { transform: translateX(3px); } }
+[aria-busy='true'] > svg:last-child { animation: busy-turn .8s linear infinite; }
+@keyframes busy-turn { to { transform: rotate(360deg); } }
+.funding-step-bar { display: block; block-size: 6px; background: hsl(var(--muted)); overflow: hidden; border-radius: 2px; }
+.funding-step-bar > span { display: block; block-size: 100%; background: hsl(var(--primary)); transform-origin: left; transition: transform var(--motion-base) var(--motion-move); }
+.funding-success { position: relative; display: flex; align-items: center; gap: 10px; margin-block-start: 16px; padding: 12px; border: 1px solid hsl(var(--success) / .4); color: hsl(var(--success)); font-size: 12px; overflow: hidden; animation: enter-up var(--motion-base) var(--motion-enter) both; }
+.funding-success-mark { display: grid; place-items: center; flex-shrink: 0; animation: success-mark var(--motion-slow) var(--motion-enter) both; }
+@keyframes success-mark { from { opacity: 0; transform: scale(.5) rotate(-20deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+.funding-confetti { position: absolute; inset: 0; pointer-events: none; }
+.funding-confetti i { position: absolute; inset-inline-start: 50%; inset-block-start: 50%; inline-size: 4px; block-size: 7px; background: hsl(var(--primary)); animation: funding-confetti var(--motion-slow) var(--motion-enter) both; }
+.funding-confetti i:nth-child(even) { background: hsl(var(--success)); }
+@keyframes funding-confetti { from { opacity: .8; transform: rotate(calc(var(--piece) * 45deg)) translateY(0); } to { opacity: 0; transform: rotate(calc(var(--piece) * 45deg)) translateY(-65px) rotate(90deg); } }
+.mobile-menu-backdrop { position: absolute; inset-block-start: 100%; inset-inline: 0; block-size: 100dvh; inline-size: 100%; z-index: -1; background: hsl(var(--overlay) / .78); border: 0; }
+.mobile-menu-backdrop:active { transform: none !important; }
+.brand-menu-backdrop { display: none; }
+@media (max-width: 1200px) {
+  .brand-menu-backdrop { display: block; }
+  .site-shell .nav-links, .site-shell .nav-actions { display: none; }
+  .site-shell .menu-toggle { display: inline-flex; }
+  .site-shell .mobile-menu { display: flex; flex-direction: column; position: absolute; inset-block-start: 100%; inset-inline: 0; padding: 12px 18px 20px; border-block-end: 1px solid hsl(var(--border)); }
+  .site-shell .mobile-menu a { padding: 14px 4px; border-block-end: 1px solid hsl(var(--border)); text-decoration: none; font-weight: 600; }
+  .site-shell .mobile-menu .button { margin-block-start: 12px; border: 0; }
+}
+.site-shell .mobile-menu { z-index: 2; isolation: isolate; background: hsl(var(--card)); }
+.site-shell .mobile-menu .button-primary { color: hsl(var(--primary-foreground)); }
+@media (min-width: 1201px) {
+  .site-shell .header-inner { gap: 16px; }
+  .site-shell .nav-links { gap: 18px; }
+  .site-shell .nav-links a { font-size: 12px; }
+  .site-shell .site-header .brand-logo { width: 160px; }
+}
+.site-shell .brand-logo-dark { display: none; }
+.dark .site-shell .brand-logo-light { display: none; }
+.dark .site-shell .brand-logo-dark { display: block; }
+.dark .site-shell .site-header .brand-logo { filter: none; }
+.dark .site-shell .fee-card { background: hsl(var(--card)); border-color: hsl(var(--border)); }
+.dark .site-shell .faq-answer, .dark .site-shell .why-point p { color: hsl(var(--muted-foreground)); }
+.site-shell .hero-top { animation: none; }
+.site-shell .hero h1 > .hero-line { display: block; animation: enter-up var(--motion-slow) var(--motion-enter) both; }
+.site-shell .hero h1 > em { animation-delay: 60ms; }
+.site-shell .hero-intro .button { animation: enter-up var(--motion-base) 180ms var(--motion-enter) both; }
+.site-shell .hero-art { animation-duration: var(--motion-slow); }
+.motion-reveal { transition-duration: var(--motion-slow); }
+.enter-up { animation-duration: var(--motion-slow); }
+.site-shell .hero-scroll-cue { margin-inline: auto; gap: 8px; color: hsl(var(--muted-foreground)); }
+.site-shell .hero-scroll-cue > span:first-child:not(:last-child) { inline-size: 18px; block-size: 29px; border: 1px solid currentColor; border-radius: 12px; background: none; animation: none; position: relative; }
+.site-shell .hero-scroll-cue > span:first-child::after { content: ''; position: absolute; inset-inline-start: 7px; inset-block-start: 6px; inline-size: 2px; block-size: 5px; border-radius: 2px; background: currentColor; animation: cue-bob 1.8s var(--motion-move) infinite; }
+@keyframes cue-bob { 50% { transform: translateY(8px); opacity: .4; } }
+.ecosystem-strip { display: flex; align-items: center; gap: 24px; padding-block: 22px; padding-inline: max(24px, calc((100% - 1160px) / 2)); border-block: 1px solid hsl(var(--border)); color: hsl(var(--muted-foreground)); }
+.ecosystem-label { font: 500 11px var(--app-font-mono); text-transform: uppercase; letter-spacing: .1em; }
+.ecosystem-window { flex: 1; min-inline-size: 0; overflow: hidden; }
+.ecosystem-track { display: flex; inline-size: max-content; animation: ecosystem-scroll 28s linear infinite; }
+.ecosystem-group { display: flex; align-items: center; gap: 60px; padding-inline: 30px; }
+.ecosystem-wordmark { white-space: nowrap; font-size: 21px; font-weight: 600; letter-spacing: -.04em; color: hsl(var(--foreground)); }
+.ecosystem-strip:hover .ecosystem-track, .ecosystem-strip:focus-within .ecosystem-track { animation-play-state: paused; }
+@keyframes ecosystem-scroll { to { transform: translateX(-50%); } }
+body.tab-hidden *, body.tab-hidden *::before, body.tab-hidden *::after { animation-play-state: paused !important; }
+html[dir='rtl'] .funding-step-bar > span { transform-origin: right; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse::after, .funding-confetti { display: none; }
+  .motion-card:hover, .motion-card:active, button:not(:disabled):active, a.button:active { transform: none; }
+  .site-shell :is(.audience-card, .journey-card, .type-card, .flow-card, .who-card, .fee-card).is-visible:hover { transform: none; }
+  .site-shell .hero h1 > .hero-line, .site-shell .hero-intro .button { animation: none; }
+  .ecosystem-track { animation: none; }
+  .ecosystem-group[aria-hidden='true'] { display: none; }
+  .ecosystem-window { overflow-x: auto; }
+}

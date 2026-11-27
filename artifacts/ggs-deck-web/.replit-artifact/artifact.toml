@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/deck/"
+title = "GG's Attention Marketplace — Investor Presentation"
+description = "A responsive, full-screen presentation player for GG.ATTENTION with keyboard and button navigation, present mode, print support, and a PDF download."
+version = "1.0.0"
+id = "artifacts/ggs-deck-web"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/deck/" ]
+localPort = 24652
+
+[services.development]
+run = "pnpm --filter @workspace/ggs-deck-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ggs-deck-web", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ggs-deck-web/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24652"
+BASE_PATH = "/deck/"

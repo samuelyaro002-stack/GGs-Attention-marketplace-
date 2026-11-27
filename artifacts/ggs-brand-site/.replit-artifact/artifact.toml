@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/ggs-brand-site/"
+title = "GG's — Attention That Earns"
+description = "A standalone public brand website for GG's Attention Marketplace, explaining the product to creators and campaign owners and directing visitors into the existing marketplace."
+version = "1.0.0"
+id = "artifacts/ggs-brand-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/ggs-brand-site/" ]
+localPort = 23535
+
+[services.development]
+run = "pnpm --filter @workspace/ggs-brand-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ggs-brand-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ggs-brand-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23535"
+BASE_PATH = "/ggs-brand-site/"

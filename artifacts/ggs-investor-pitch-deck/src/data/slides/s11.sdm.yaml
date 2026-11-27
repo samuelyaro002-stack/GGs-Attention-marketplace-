@@ -1,0 +1,736 @@
+{
+  "format": "replit.sdm",
+  "version": 1,
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "background": {
+    "kind": "solid",
+    "color": {
+      "kind": "token",
+      "token": "background"
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": "#1D222F",
+      "surface": "#272C3A",
+      "surfaceAlt": "#323848",
+      "foreground": "#F8F4ED",
+      "muted": "#C2BAAD",
+      "accent": "#FF7C4D"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Manrope"
+    }
+  },
+  "elements": [
+    {
+      "id": "s11_topAccent",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 96,
+        "width": 56,
+        "height": 7
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "rect"
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      }
+    },
+    {
+      "id": "s11_kicker",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 110,
+        "width": 1100,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "GO-TO-MARKET"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_title",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 163,
+        "width": 1600,
+        "height": 165
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Founder-led community growth is a starting point for distribution."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 32,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_founderCard",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 350,
+        "width": 800,
+        "height": 500
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s11_founderLabel",
+      "type": "text",
+      "frame": {
+        "x": 160,
+        "y": 390,
+        "width": 700,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "FOUNDER TRACK RECORD"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.3
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_experience",
+      "type": "text",
+      "frame": {
+        "x": 160,
+        "y": 462,
+        "width": 700,
+        "height": 100
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "~3 years"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 36,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_experienceBody",
+      "type": "text",
+      "frame": {
+        "x": 160,
+        "y": 542,
+        "width": 700,
+        "height": 65
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Web3 community building"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_growth",
+      "type": "text",
+      "frame": {
+        "x": 160,
+        "y": 641,
+        "width": 700,
+        "height": 105
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "300 → 1,500"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 39,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_growthBody",
+      "type": "text",
+      "frame": {
+        "x": 160,
+        "y": 760,
+        "width": 700,
+        "height": 90
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Link AI active growth: under two weeks."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_gtmCard",
+      "type": "shape",
+      "frame": {
+        "x": 980,
+        "y": 350,
+        "width": 820,
+        "height": 500
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s11_gtmLabel",
+      "type": "text",
+      "frame": {
+        "x": 1020,
+        "y": 390,
+        "width": 720,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "PROPOSED FIRST CHANNELS"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.3
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_channel1",
+      "type": "text",
+      "frame": {
+        "x": 1020,
+        "y": 470,
+        "width": 700,
+        "height": 60
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Celo ecosystem relationships"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_channel2",
+      "type": "text",
+      "frame": {
+        "x": 1020,
+        "y": 536,
+        "width": 700,
+        "height": 60
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Web3 community partnerships"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_channel3",
+      "type": "text",
+      "frame": {
+        "x": 1020,
+        "y": 602,
+        "width": 700,
+        "height": 60
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Direct creator outreach"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_gtmPlaceholder",
+      "type": "text",
+      "frame": {
+        "x": 1020,
+        "y": 735,
+        "width": 720,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "[CONFIRM CHANNEL PRIORITIES / PARTNERS]"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_pdf",
+      "type": "shape",
+      "frame": {
+        "x": 1410,
+        "y": 80,
+        "width": 390,
+        "height": 64
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DOWNLOAD AS PDF",
+                "action": {
+                  "kind": "openUrl",
+                  "url": "/deck/ggs-investor-pitch.pdf",
+                  "target": "newWindow",
+                  "tooltip": "Open the complete deck as a PDF"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "background"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_prev",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "BACK",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "previous",
+                  "tooltip": "Previous slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_next",
+      "type": "shape",
+      "frame": {
+        "x": 310,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "NEXT",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "next",
+                  "tooltip": "Next slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s11_page",
+      "type": "text",
+      "frame": {
+        "x": 1640,
+        "y": 972,
+        "width": 160,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "11  /  12"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24,
+            "align": "right"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    }
+  ]
+}

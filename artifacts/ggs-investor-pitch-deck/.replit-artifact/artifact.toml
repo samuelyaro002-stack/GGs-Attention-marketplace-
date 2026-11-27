@@ -1,0 +1,28 @@
+kind = "slides"
+previewPath = "/deck-content/"
+title = "GG's Attention Marketplace — Investor Pitch"
+description = "A 12-slide investor presentation for GG.ATTENTION, a Celo-based creator attention marketplace."
+version = "1.0.0"
+id = "artifacts/ggs-investor-pitch-deck"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/deck-content/" ]
+localPort = 24234
+
+[services.development]
+run = "pnpm --filter @workspace/ggs-investor-pitch-deck run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ggs-investor-pitch-deck", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ggs-investor-pitch-deck/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24234"
+BASE_PATH = "/deck-content/"

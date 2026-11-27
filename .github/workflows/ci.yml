@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: >
+          pnpm install --frozen-lockfile
+          --filter @workspace/api-server...
+          --filter @workspace/ggs-marketplace...
+          --filter @workspace/ggs-brand-site...
+          --filter @workspace/db...
+      - run: pnpm run typecheck:libs
+      - run: pnpm --filter @workspace/api-server run typecheck
+      - run: pnpm --filter @workspace/api-server run test:celo-price
+      - run: pnpm --filter @workspace/api-server run test:rewards
+      - run: pnpm --filter @workspace/api-server run test:auth
+      - run: pnpm --filter @workspace/api-server run build
+      - run: PORT=3000 BASE_PATH=/ VITE_PRIVY_APP_ID=ci pnpm --filter @workspace/ggs-marketplace run build
+      - run: PORT=3001 BASE_PATH=/ggs-brand-site/ pnpm --filter @workspace/ggs-brand-site run build

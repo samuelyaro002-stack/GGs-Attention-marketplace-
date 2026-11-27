@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "GG's Attention Marketplace"
+description = "A persistent onchain attention marketplace MVP where Web3 projects launch campaigns, creators submit engagement, and rewards are allocated transparently from verified XP."
+version = "1.0.0"
+id = "artifacts/ggs-marketplace"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25950
+
+[services.development]
+run = "pnpm --filter @workspace/ggs-marketplace run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ggs-marketplace", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ggs-marketplace/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25950"
+BASE_PATH = "/"

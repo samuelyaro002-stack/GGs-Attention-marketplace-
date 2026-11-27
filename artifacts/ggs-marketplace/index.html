@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>GG&#39;s Attention Marketplace</title>
+    <meta name="description" content="GG&#39;s Attention Marketplace — built on Replit. Update this description to reflect the app." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="GG&#39;s Attention Marketplace" />
+    <meta property="og:description" content="GG&#39;s Attention Marketplace — built on Replit. Update this description to reflect the app." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GG&#39;s Attention Marketplace" />
+    <meta name="twitter:description" content="GG&#39;s Attention Marketplace — built on Replit. Update this description to reflect the app." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem('ggs:theme') || 'system';
+          const dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+          const locale = localStorage.getItem('ggs:locale');
+          if (locale) document.documentElement.lang = locale;
+          document.documentElement.dir = 'ltr';
+        } catch {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

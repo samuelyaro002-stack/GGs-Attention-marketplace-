@@ -1,0 +1,645 @@
+{
+  "format": "replit.sdm",
+  "version": 1,
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "background": {
+    "kind": "solid",
+    "color": {
+      "kind": "token",
+      "token": "background"
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": "#1D222F",
+      "surface": "#272C3A",
+      "surfaceAlt": "#323848",
+      "foreground": "#F8F4ED",
+      "muted": "#C2BAAD",
+      "accent": "#FF7C4D"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Manrope"
+    }
+  },
+  "elements": [
+    {
+      "id": "s03_topAccent",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 96,
+        "width": 56,
+        "height": 7
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "rect"
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      }
+    },
+    {
+      "id": "s03_kicker",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 110,
+        "width": 1100,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "THE SOLUTION"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_title",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 163,
+        "width": 1600,
+        "height": 165
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "One campaign record connects work to rewards."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 32,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_lead",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 355,
+        "width": 700,
+        "height": 220
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "A funded campaign links creator work to a visible reward split."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 26,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_panel",
+      "type": "shape",
+      "frame": {
+        "x": 910,
+        "y": 350,
+        "width": 890,
+        "height": 460
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s03_p1l",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 390,
+        "width": 700,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "FUNDED CAMPAIGN"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.3
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_p1",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 440,
+        "width": 740,
+        "height": 62
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Set the brief and reward pool."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 20,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_p2l",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 510,
+        "width": 700,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "RECORDED CONTRIBUTION"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.3
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_p2",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 560,
+        "width": 740,
+        "height": 62
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Post links feed XP."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_p3l",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 630,
+        "width": 700,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "REVIEWED DISTRIBUTION"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.3
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_p3",
+      "type": "text",
+      "frame": {
+        "x": 970,
+        "y": 680,
+        "width": 740,
+        "height": 62
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Admin triggers on-chain distribution."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 18,
+              "weight": 600,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_caveat",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 781,
+        "width": 710,
+        "height": 115
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Sepolia cycle verified; reward pool not on Mainnet."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 16,
+              "weight": 500,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_pdf",
+      "type": "shape",
+      "frame": {
+        "x": 1410,
+        "y": 80,
+        "width": 390,
+        "height": 64
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DOWNLOAD AS PDF",
+                "action": {
+                  "kind": "openUrl",
+                  "url": "/deck/ggs-investor-pitch.pdf",
+                  "target": "newWindow",
+                  "tooltip": "Open the complete deck as a PDF"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "background"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_prev",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "BACK",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "previous",
+                  "tooltip": "Previous slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_next",
+      "type": "shape",
+      "frame": {
+        "x": 310,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "NEXT",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "next",
+                  "tooltip": "Next slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s03_page",
+      "type": "text",
+      "frame": {
+        "x": 1640,
+        "y": 972,
+        "width": 160,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "03  /  12"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24,
+            "align": "right"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    }
+  ]
+}

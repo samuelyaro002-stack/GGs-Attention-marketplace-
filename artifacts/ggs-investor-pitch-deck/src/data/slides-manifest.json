@@ -1,0 +1,110 @@
+[
+  {
+    "id": "s01",
+    "position": 1,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s01.sdm.yaml",
+    "title": "GG's — Pay for attention that performs",
+    "description": "Investor pitch cover",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s02",
+    "position": 2,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s02.sdm.yaml",
+    "title": "Creator marketing is hard to verify and settle",
+    "description": "The visibility, measurement, and settlement problem GG addresses",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s03",
+    "position": 3,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s03.sdm.yaml",
+    "title": "One campaign record connects work to rewards",
+    "description": "How GG connects campaign rules, submissions, scoring, and payout",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s04",
+    "position": 4,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s04.sdm.yaml",
+    "title": "A four-step campaign flow",
+    "description": "From campaign funding to administrator-triggered on-chain distribution",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s05",
+    "position": 5,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s05.sdm.yaml",
+    "title": "The public product is live; private creator views stay gated",
+    "description": "Real app screenshots with an explicit placeholder for the authenticated creator dashboard",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s06",
+    "position": 6,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s06.sdm.yaml",
+    "title": "Two sides need a clearer way to set and earn campaign rewards",
+    "description": "The project and creator personas served by the marketplace",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s07",
+    "position": 7,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s07.sdm.yaml",
+    "title": "A funded pool and shared record make payout logic easier to inspect",
+    "description": "A cautious comparison with traditional creator deals and quest platforms",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s08",
+    "position": 8,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s08.sdm.yaml",
+    "title": "Reach is only the starting signal",
+    "description": "Prototype scoring inputs and the current social verification limitation",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s09",
+    "position": 9,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s09.sdm.yaml",
+    "title": "The campaign cycle is verified on testnet; Mainnet deployment remains ahead",
+    "description": "Confirmed product milestones and explicit production gaps",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s10",
+    "position": 10,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s10.sdm.yaml",
+    "title": "A fixed fee ties GG revenue to funded campaign volume",
+    "description": "The 10% protocol fee and an explicitly illustrative revenue formula",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s11",
+    "position": 11,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s11.sdm.yaml",
+    "title": "Founder-led community growth provides a starting point for distribution",
+    "description": "Founder experience, previous community growth, and proposed initial channels",
+    "speakerNotes": ""
+  },
+  {
+    "id": "s12",
+    "position": 12,
+    "kind": "sdm",
+    "filepath": "src/data/slides/s12.sdm.yaml",
+    "title": "Seeking [raise amount] to move from testnet proof to a reviewed launch",
+    "description": "Fundraising placeholders and a three-step path to a reviewed Mainnet launch",
+    "speakerNotes": ""
+  }
+]

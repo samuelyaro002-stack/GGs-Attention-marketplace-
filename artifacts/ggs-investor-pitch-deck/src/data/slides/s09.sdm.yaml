@@ -1,0 +1,781 @@
+{
+  "format": "replit.sdm",
+  "version": 1,
+  "size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "background": {
+    "kind": "solid",
+    "color": {
+      "kind": "token",
+      "token": "background"
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": "#1D222F",
+      "surface": "#272C3A",
+      "surfaceAlt": "#323848",
+      "foreground": "#F8F4ED",
+      "muted": "#C2BAAD",
+      "accent": "#FF7C4D"
+    },
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "Manrope"
+    }
+  },
+  "elements": [
+    {
+      "id": "s09_topAccent",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 96,
+        "width": 56,
+        "height": 7
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "rect"
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      }
+    },
+    {
+      "id": "s09_kicker",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 110,
+        "width": 1100,
+        "height": 42
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "TRACTION AND PROGRESS"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.2
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_title",
+      "type": "text",
+      "frame": {
+        "x": 120,
+        "y": 163,
+        "width": 1600,
+        "height": 170
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Testnet flow is verified; Mainnet deployment remains ahead."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 30,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.08
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status1",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 360,
+        "width": 500,
+        "height": 380
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s09_status2",
+      "type": "shape",
+      "frame": {
+        "x": 710,
+        "y": 360,
+        "width": 500,
+        "height": 380
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s09_status3",
+      "type": "shape",
+      "frame": {
+        "x": 1300,
+        "y": 360,
+        "width": 500,
+        "height": 380
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      }
+    },
+    {
+      "id": "s09_status1label",
+      "type": "text",
+      "frame": {
+        "x": 158,
+        "y": 392,
+        "width": 420,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "LIVE"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.4
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status1head",
+      "type": "text",
+      "frame": {
+        "x": 158,
+        "y": 458,
+        "width": 420,
+        "height": 90
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Live app + daily G$"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 20,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status1body",
+      "type": "text",
+      "frame": {
+        "x": 158,
+        "y": 554,
+        "width": 420,
+        "height": 150
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Public marketplace; daily G$ claim live on Celo Mainnet."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 17,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status2label",
+      "type": "text",
+      "frame": {
+        "x": 748,
+        "y": 392,
+        "width": 420,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "VERIFIED"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14.5,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 1.4
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status2head",
+      "type": "text",
+      "frame": {
+        "x": 748,
+        "y": 458,
+        "width": 420,
+        "height": 90
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Sepolia cycle"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 24,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status2body",
+      "type": "text",
+      "frame": {
+        "x": 748,
+        "y": 554,
+        "width": 420,
+        "height": 150
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Funding, scoring, and batch payout verified on Sepolia."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 17,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status3label",
+      "type": "text",
+      "frame": {
+        "x": 1338,
+        "y": 392,
+        "width": 420,
+        "height": 48
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "MAINNET NOT READY"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "accent"
+              },
+              "letterSpacingPt": 0.6
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status3head",
+      "type": "text",
+      "frame": {
+        "x": 1338,
+        "y": 458,
+        "width": 420,
+        "height": 90
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Pool + audit"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "display"
+              },
+              "sizePt": 24,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_status3body",
+      "type": "text",
+      "frame": {
+        "x": 1338,
+        "y": 554,
+        "width": 420,
+        "height": 150
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "Pool not on Mainnet; contract unaudited."
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 17,
+              "weight": 400,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_countBox",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 795,
+        "width": 1680,
+        "height": 88
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 14
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      }
+    },
+    {
+      "id": "s09_countPlaceholder",
+      "type": "text",
+      "frame": {
+        "x": 154,
+        "y": 811,
+        "width": 1600,
+        "height": 55
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "[ADD VERIFIED USER / CAMPAIGN / CREATOR COUNTS]"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              }
+            },
+            "lineHeight": 1.24
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_pdf",
+      "type": "shape",
+      "frame": {
+        "x": 1410,
+        "y": 80,
+        "width": 390,
+        "height": 64
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "accent"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "DOWNLOAD AS PDF",
+                "action": {
+                  "kind": "openUrl",
+                  "url": "/deck/ggs-investor-pitch.pdf",
+                  "target": "newWindow",
+                  "tooltip": "Open the complete deck as a PDF"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "background"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_prev",
+      "type": "shape",
+      "frame": {
+        "x": 120,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surface"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "BACK",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "previous",
+                  "tooltip": "Previous slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_next",
+      "type": "shape",
+      "frame": {
+        "x": 310,
+        "y": 972,
+        "width": 170,
+        "height": 58
+      },
+      "geometry": {
+        "kind": "preset",
+        "preset": "roundRect",
+        "cornerRadius": 10
+      },
+      "fill": {
+        "kind": "solid",
+        "color": {
+          "kind": "token",
+          "token": "surfaceAlt"
+        }
+      },
+      "body": {
+        "insetsPt": {
+          "top": 3,
+          "right": 8,
+          "bottom": 3,
+          "left": 8
+        },
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "NEXT",
+                "action": {
+                  "kind": "goToRelativeSlide",
+                  "target": "next",
+                  "tooltip": "Next slide"
+                }
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 14,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "foreground"
+              },
+              "letterSpacingPt": 0.3
+            },
+            "lineHeight": 1.1,
+            "align": "center"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    },
+    {
+      "id": "s09_page",
+      "type": "text",
+      "frame": {
+        "x": 1640,
+        "y": 972,
+        "width": 160,
+        "height": 58
+      },
+      "body": {
+        "paragraphs": [
+          {
+            "runs": [
+              {
+                "text": "09  /  12"
+              }
+            ],
+            "defaultRunStyle": {
+              "font": {
+                "kind": "token",
+                "token": "body"
+              },
+              "sizePt": 15,
+              "weight": 700,
+              "color": {
+                "kind": "token",
+                "token": "muted"
+              }
+            },
+            "lineHeight": 1.24,
+            "align": "right"
+          }
+        ],
+        "verticalAlign": "middle"
+      }
+    }
+  ]
+}
